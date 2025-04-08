@@ -1,10 +1,9 @@
-#ifndef MAINWINDOW_H
+﻿#ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "appcontext.h"
 #include "entrypoint.h"
-#include "logic.h"
+#include "appcontext.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -20,16 +19,15 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
-private slots:
-    void convertButton_Clicked();
-
-    void get_data();
-    void show_answer();
-    // void show_error();
-
 private:
     Ui::MainWindow *ui;
 
     struct AppContext context;
+
+    void convertButton_Clicked();
+
+    void text_changed();
+    void get_notation();
+    void show_answer();
 };
 #endif // MAINWINDOW_H
